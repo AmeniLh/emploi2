@@ -1,0 +1,128 @@
+{% extends 'AvanzuAdminThemeBundle:layout:base-layout.html.twig' %}
+{% block title %}Gestion Eleve{% endblock %}
+{% block page_title %}Gestion Eleve{% endblock %}
+{% block page_subtitle %}{% endblock %}
+{% block avanzu_sidebar %}
+    {% include 'EmploiBundle:Admin:sidebarAdmin.html.twig' %}
+{% endblock %}
+{% block page_content %}
+    <div class="nav-tabs-custom">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#tab_1" data-toggle="tab">Lister</a></li>
+            <li><a href="#tab_2" data-toggle="tab">Ajouter</a></li>
+            <!--<li><a href="#tab_3" data-toggle="tab">Tab 3</a></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    Dropdown <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+                    <li role="presentation" class="divider"></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+                </ul>
+            </li>-->
+            <li class="pull-right"><a href="#" class="text-muted"><i class="fa fa-gear"></i></a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="tab_1">
+                <div class="form-group">
+                    <label>Select</label>
+                    <select class="form-control">
+                        <option>Tous les eleves</option>
+                        <option>1 CP</option>
+                        <option>2 CP</option>
+                        <option>3 CP</option>
+                        <option>4 CP</option>
+                    </select>
+                </div>
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">Liste des eleves</h3>
+
+                        <div class="box-tools">
+                            <div class="input-group input-group-sm" style="width: 150px;">
+                                <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+
+                                <div class="input-group-btn">
+                                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body table-responsive no-padding">
+                        <table class="table table-hover">
+                            <tbody><tr>
+                                <th>ID</th>
+                                <th>Nom</th>
+                                <th>Prenom</th>
+                                <th>Statut</th>
+                                <th>Classe</th>
+                                <th>Action</th>
+                            </tr>
+                            <tr>
+                                <td>183</td>
+                                <td>John </td>
+                                <td>Doe</td>
+                                <td><span class="label label-success">Approved</span></td>
+                                <td>1 CP 2</td>
+                                <td><span class="label label-primary">Modifier</span> <span class="label label-danger">Supprimer</span></td>
+                            </tr>
+                            <tr>
+                                <td>219</td>
+                                <td>Alexander</td>
+                                <td> Pierce</td>
+                                <td><span class="label label-warning">Pending</span></td>
+                                <td>1 CP 2</td>
+                                <td><span class="label label-primary">Modifier</span> <span class="label label-danger">Supprimer</span></td>
+                            </tr>
+                            <tr>
+                                <td>657</td>
+                                <td>Bob</td>
+                                <td> Doe</td>
+                                <td><span class="label label-success">Approved</span></td>
+                                <td>2 CP 1</td>
+                                <td><span class="label label-primary">Modifier</span> <span class="label label-danger">Supprimer</span></td>
+                            </tr>
+                            <tr>
+                                <td>175</td>
+                                <td>Mike</td>
+                                <td>Doe</td>
+                                <td><span class="label label-danger">Denied</span></td>
+                                <td>2 CP 1</td>
+                                <td><span class="label label-primary">Modifier</span> <span class="label label-danger">Supprimer</span></td>
+                            </tr>
+                            </tbody></table>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+
+            </div>
+            <!-- /.tab-pane -->
+            <div class="tab-pane" id="tab_2">
+                The European languages are members of the same family. Their separate existence is a myth.
+                For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ
+                in their grammar, their pronunciation and their most common words. Everyone realizes why a
+                new common language would be desirable: one could refuse to pay expensive translators. To
+                achieve this, it would be necessary to have uniform grammar, pronunciation and more common
+                words. If several languages coalesce, the grammar of the resulting language is more simple
+                and regular than that of the individual languages.
+            </div>
+            <!-- /.tab-pane -->
+            <div class="tab-pane" id="tab_3">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                It has survived not only five centuries, but also the leap into electronic typesetting,
+                remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
+                sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
+                like Aldus PageMaker including versions of Lorem Ipsum.
+            </div>
+            <!-- /.tab-pane -->
+        </div>
+        <!-- /.tab-content -->
+    </div>
+{% endblock %}
+{% block avanzu_admin_footer %}{% endblock %}

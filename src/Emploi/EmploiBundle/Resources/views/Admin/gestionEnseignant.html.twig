@@ -1,0 +1,78 @@
+{% extends 'AvanzuAdminThemeBundle:layout:base-layout.html.twig' %}
+{% block title %}Gestion Enseignant{% endblock %}
+{% block page_title %}Gestion Enseignant{% endblock %}
+{% block page_subtitle %}{% endblock %}
+{% block avanzu_sidebar %}
+    {% include 'EmploiBundle:Admin:sidebarAdmin.html.twig' %}
+{% endblock %}
+{% block page_content %}
+    <div class="form-group col-xs-3">
+        <label>Choisir une Classe</label>
+        <select class="form-control">
+            <option>Liste classe</option>
+            <option>option B</option>
+            <option>option C</option>
+            <option>option 4</option>
+            <option>option 5</option>
+        </select>
+    </div>
+    <div class="form-group col-xs-3">
+        <label>Choisir une matiere</label>
+        <select class="form-control">
+            <option>Liste matiere</option>
+            <option>option 2</option>
+            <option>option 3</option>
+            <option>option 4</option>
+            <option>option 5</option>
+        </select>
+    </div>
+    <div class="form-group col-xs-3">
+        <label>Choisir Enseignant</label>
+        <select class="form-control">
+            <option>Liste Enseignant</option>
+            <option>option b</option>
+            <option>option c</option>
+            <option>option 4</option>
+            <option>option 5</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary" style="    margin-top: 25px;">ok</button><br/><br/>
+    <table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info" style="    background-color: white;">
+        <thead>
+        <tr role="row">
+            <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Rendering engine: activate to sort column descending" aria-sort="ascending">Classe</th>
+            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Matiere</th>
+            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Enseignant</th>
+            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">Action</th>
+
+        </thead>
+        <tbody>
+        <tr role="row" class="odd">
+            <td class="sorting_1">1 CP 1</td>
+            <td>Math</td>
+            <td>Foulen Fouleni</td>
+            <td><span class="label label-primary">Modifier</span> <span class="label label-danger">Supprimer</span></td>
+
+        </tr><tr role="row" class="even">
+            <td class="sorting_1">1 CP 2</td>
+            <td>Anglais</td>
+            <td>John Doe</td>
+            <td><span class="label label-primary">Modifier</span> <span class="label label-danger">Supprimer</span></td>
+
+        </tr><tr role="row" class="odd">
+            <td class="sorting_1">1 CP 1</td>
+            <td>Math</td>
+            <td>Foulen Fouleni</td>
+            <td><span class="label label-primary">Modifier</span> <span class="label label-danger">Supprimer</span></td>
+
+        </tr><tr role="row" class="even">
+            <td class="sorting_1">1 CP 2</td>
+            <td>Anglais</td>
+            <td>John Doe</td>
+            <td><span class="label label-primary">Modifier</span> <span class="label label-danger">Supprimer</span></td>
+
+        </tr></tbody>
+
+    </table>
+{% endblock %}
+{% block avanzu_admin_footer %}{% endblock %}

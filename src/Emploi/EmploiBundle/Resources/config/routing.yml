@@ -1,0 +1,24 @@
+emploi_homepage:
+    path:     /index
+    defaults: { _controller: EmploiBundle:Default:index }
+creerAnnee:
+    path:     /creerAnnee
+    defaults: { _controller: EmploiBundle:Default:creerAnnee }
+creerClasse:
+    path:     /creerClasse
+    defaults: { _controller: EmploiBundle:Default:creerClasse }
+gestionEleve:
+    path:     /gestionEleve
+    defaults: { _controller: EmploiBundle:Default:gestionEleve }
+gestionEnseignant:
+    path:     /gestionEnseignant
+    defaults: { _controller: EmploiBundle:Default:gestionEnseignant }
+gestionEmploiStatique:
+    path:     /gestionEmploiStat
+    defaults: { _controller: EmploiBundle:Default:gestionEmploiStat }
+sidebarAdmin:
+    path:     /sidebarAdmin
+    defaults: { _controller: EmploiBundle:Default:sidebarAdmin }
+indexAdmin:
+    path:     /indexAdmin
+    defaults: { _controller: EmploiBundle:Default:indexAdmin }

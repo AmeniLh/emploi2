@@ -1,0 +1,119 @@
+{% extends 'AvanzuAdminThemeBundle:layout:base-layout.html.twig' %}
+{% block title %}Creer Année{% endblock %}
+{% block page_title %}Année Scolaire{% endblock %}
+{% block page_subtitle %}Définition calendrier pédagogique{% endblock %}
+{% block avanzu_sidebar %}
+    {% include 'EmploiBundle:Admin:sidebarAdmin.html.twig' %}
+{% endblock %}
+{% block page_content %}
+    <br/>
+    <!-- debut AS -->
+    <div>
+    <div class="form-group col-xs-3" style="width:40%;">
+        <label>Début AS:</label>
+
+        <div class="input-group date">
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            <input type="text" class="form-control pull-right" id="datepicker">
+        </div>
+        <!-- /.input group -->
+    </div>
+    <div class="form-group col-xs-3" style="width:40%;">
+        <label>Fin AS:</label>
+
+        <div class="input-group date" >
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            <input type="text" class="form-control pull-right" id="datepicker">
+
+        </div>
+    </div>
+    <div class="form-group col-xs-2" style="    margin-top: 25px;">
+        <button type="submit" class="btn btn-primary">Creer</button>
+    </div>
+    <!-- Fin AS -->
+    <!-- Bloc Ajouter vacances -->
+    <div>
+    <div class="col-xs-4" style="background-color: #fff;    border-radius: 25px;    padding-bottom: 15px; margin:5px;">
+        <br/><a href="#">(+) Ajouter vacances...</a><br/><br/>
+        <div class="form-group">
+            <label>Description</label>
+            <input type="text" class="form-control" placeholder="Ex. vacances d'été ...">
+        </div>
+        <label>Début vacances:</label><br/>
+        <div class="input-group date"  >
+
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            <input type="text" class="form-control pull-right" id="datepicker">
+        </div>
+        <label>Fin vacances:</label><br/>
+        <div class="input-group date"  >
+
+            <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </div>
+            <input type="text" class="form-control pull-right" id="datepicker">
+        </div><br/>
+        <button type="submit" class="bg-gray btn btn-primary" style="width:100%;border: grey;">Ajouter vacances</button>
+
+    </div>
+    </div>
+    </div>
+    <!-- Fin Bloc Ajouter vacances -->
+    <!-- Bloc Ajouter examens -->
+    <div>
+        <div class="col-xs-4" style="background-color: #fff;    border-radius: 25px;    padding-bottom: 15px; margin:5px;">
+            <br/><a href="#">(+) Ajouter examen...</a><br/><br/>
+            <div class="form-group">
+                <label>Description</label>
+                <input type="text" class="form-control" placeholder="Ex. DS ...">
+            </div>
+            <label>Début examens:</label><br/>
+            <div class="input-group date"  >
+
+                <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                </div>
+                <input type="text" class="form-control pull-right" id="datepicker">
+            </div>
+            <label>Fin examens:</label><br/>
+            <div class="input-group date"  >
+
+                <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                </div>
+                <input type="text" class="form-control pull-right" id="datepicker">
+            </div><br/>
+            <button type="submit" class="bg-gray btn btn-primary" style="width:100%;border: grey;">Ajouter examen</button>
+
+        </div>
+    </div>
+    <!-- Fin Bloc Ajouter examen -->
+    <!-- Bloc Ajouter jours feriers -->
+    <div >
+        <div class="col-xs-3" style="background-color: #fff;    border-radius: 25px;    padding-bottom: 15px; margin:5px;">
+            <br/><a href="#">(+) Ajouter jours fériers...</a><br/><br/>
+            <div class="form-group">
+                <label>Description</label>
+                <input type="text" class="form-control" placeholder="Ex. Fête du Travail ...">
+            </div>
+            <label>Date:</label><br/>
+            <div class="input-group date"  >
+
+                <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                </div>
+                <input type="text" class="form-control pull-right" id="datepicker">
+            </div><br/>
+            <button type="submit" class="bg-gray btn btn-primary" style="width:100%;border: grey;">Ajouter J. ferier</button>
+        </div>
+    </div>
+    <!-- Fin Bloc Ajouter jours feriers -->
+{% endblock %}
+{% block avanzu_admin_footer %}{% endblock %}
+

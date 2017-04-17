@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Eleve</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Ideleve</th>
+                <td>{{ eleve.ideleve }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ eleve.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ eleve.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Datenais</th>
+                <td>{% if eleve.datenais %}{{ eleve.datenais|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('eleve_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('eleve_edit', { 'id': eleve.ideleve }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
