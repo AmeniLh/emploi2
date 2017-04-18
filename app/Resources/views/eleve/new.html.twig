@@ -1,8 +1,8 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout/base-layout.html.twig' %}
 
 {% block body %}
-    <h1>Eleve creation</h1>
-
+    <h1>{% block page_title %}Eleve creation{% endblock %}</h1>
+{% block page_content %}
     {{ form_start(form) }}
         {{ form_widget(form) }}
         <input type="submit" value="Create" />
@@ -13,4 +13,5 @@
             <a href="{{ path('eleve_index') }}">Back to the list</a>
         </li>
     </ul>
+{% endblock %}
 {% endblock %}

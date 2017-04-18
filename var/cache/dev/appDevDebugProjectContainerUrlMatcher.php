@@ -100,6 +100,68 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        if (0 === strpos($pathinfo, '/eleve')) {
+            // eleve_index
+            if (rtrim($pathinfo, '/') === '/eleve') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_eleve_index;
+                }
+
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'eleve_index');
+                }
+
+                return array (  '_controller' => 'Emploi\\EmploiBundle\\Controller\\EleveController::indexAction',  '_route' => 'eleve_index',);
+            }
+            not_eleve_index:
+
+            // eleve_new
+            if ($pathinfo === '/eleve/new') {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_eleve_new;
+                }
+
+                return array (  '_controller' => 'Emploi\\EmploiBundle\\Controller\\EleveController::newAction',  '_route' => 'eleve_new',);
+            }
+            not_eleve_new:
+
+            // eleve_show
+            if (preg_match('#^/eleve/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_eleve_show;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'eleve_show')), array (  '_controller' => 'Emploi\\EmploiBundle\\Controller\\EleveController::showAction',));
+            }
+            not_eleve_show:
+
+            // eleve_edit
+            if (preg_match('#^/eleve/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_eleve_edit;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'eleve_edit')), array (  '_controller' => 'Emploi\\EmploiBundle\\Controller\\EleveController::editAction',));
+            }
+            not_eleve_edit:
+
+            // eleve_delete
+            if (preg_match('#^/eleve/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'DELETE') {
+                    $allow[] = 'DELETE';
+                    goto not_eleve_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'eleve_delete')), array (  '_controller' => 'Emploi\\EmploiBundle\\Controller\\EleveController::deleteAction',));
+            }
+            not_eleve_delete:
+
+        }
+
         // emploi_homepage
         if ($pathinfo === '/index') {
             return array (  '_controller' => 'Emploi\\EmploiBundle\\Controller\\DefaultController::indexAction',  '_route' => 'emploi_homepage',);
